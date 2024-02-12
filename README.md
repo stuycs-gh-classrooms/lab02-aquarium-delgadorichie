@@ -1,10 +1,10 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/oq20sLQj)
 # Aquarium Lab
-#### Name:
+#### Name: Richie Delgado
 #### TableBuddies+™
-- TB+ 0:
-- TB+ 1:
-- TB+ 2:
+- TB+ 0: Haocheng
+- TB+ 1:Ryan
+- TB+ 2:Albert
 
 ---
 ### Instructions
