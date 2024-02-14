@@ -3,6 +3,7 @@ class RyanFish extends Animal{
     super(xpos,ypos,xs,ys,xW,yH,t);
   }
   void display(){
+    super.display();
     float xScaleFactor; //multiplies x and y offsets so the fish can still fit in the width and height
     float yScaleFactor;
     xScaleFactor = aw/75;
@@ -64,4 +65,5 @@ class RyanFish extends Animal{
       pos.y = tank.ty;
     }
   }
+  
 }

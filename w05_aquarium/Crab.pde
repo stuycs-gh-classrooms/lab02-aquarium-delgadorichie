@@ -3,6 +3,7 @@ class Crab extends Animal{ //My Animal
     super(xpos,ypos,xs,ys,xW,yH,t);
   }
   void display(){
+    super.display();
   float xScaleFactor =ah/170;
   float yScaleFactor =aw/140;
   fill(255,0,0);
@@ -46,7 +47,7 @@ class Crab extends Animal{ //My Animal
   endShape(CLOSE);
   popMatrix();
   }
-  void move(){
+  void swim(){
     pos.x += xspeed; //moves like an animal but with a bit of randomness (okay, maybe more than a bit)
     pos.y += yspeed;
     if(pos.x + aw > tank.tx + tank.tw){

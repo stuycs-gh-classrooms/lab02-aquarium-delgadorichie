@@ -52,4 +52,11 @@ class Tank{
     Animal a = new Turtle(x,y);
     animals.add(a);
   }
+  void allEat(){
+    for(int i =0; i< animals.size(); i++){
+      for(int j =0; j< animals.size(); j++){
+     animals.get(i).eat(animals.get(j));
+    }
+    }
+  }
 }

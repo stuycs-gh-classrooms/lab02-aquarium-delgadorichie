@@ -36,17 +36,10 @@ void draw() {
   stroke(#FFFFFF);
   triangle(0,0,0,tankY, tankY * sqrt(3),0);
   stroke(#000000);
- // println(tankV/30/30/30 + "cubic inches"); 
-  demo.display();
-  demo.swim();
-  demo2.checkEat(demo);
-  demo.checkEat(demo2);
-  demo2.display();
-  demo2.swim();
-  turt1.display();
-  turt1.swim();
-  turt1.eat(demo);
-  turt1.eat(demo2);
+  t.moveAnimals();
+  t.allEat();
+  //if(animals.size()>10){
+ // println(animals.get(10).hunger);}
  // println(mouseX + " " + mouseY);
   
 }

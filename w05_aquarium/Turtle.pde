@@ -5,8 +5,10 @@ class Turtle extends Animal {
     yspeed = 0;
     aw = random(60, 80);
     ah = random(50, 55);
+    hunger = 100;
   }
   void display() {
+    super.display();
     fill(0, 48, 32);
     arc(pos.x + aw/3, pos.y + ah/2, aw/1.5, ah, PI, 2*PI, CHORD);
     fill(0, 200, 0);
@@ -19,14 +21,14 @@ class Turtle extends Animal {
       circle(pos.x - aw/6, pos.y + ah/2, aw/3);
     }
   }
-  boolean collisionCheck(Goldfish other) {
+  boolean collisionCheck(Animal other) {
     return (dist(pos.x + 5 * aw/6, pos.y + ah/2, other.cx, other.cy)<other.aw/4);
   }
-  void eat(Goldfish other) {
+  void eat(Animal other) {
     if (other.perished && !other.STOP && collisionCheck(other)) {
       other.STOP = true;
-      ah += log(other.fsize) * ratio;
-      aw += log(other.fsize);
+      ah += log(other.size) * ratio;
+      aw += log(other.size);
     }
   }
 }
