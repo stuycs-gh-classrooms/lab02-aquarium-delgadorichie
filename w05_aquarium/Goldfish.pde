@@ -8,11 +8,6 @@ class Goldfish extends Animal {
     fsize = aw * ah * PI;
     ratio = ah/aw;
   }
-  Goldfish(int x, int y, int z, int w) {
-    super(x, y, z, w);
-    fsize = aw * ah * PI;
-    ratio = ah/aw;
-  }
   void display() {
     if(!STOP){
     hunger-= .1;

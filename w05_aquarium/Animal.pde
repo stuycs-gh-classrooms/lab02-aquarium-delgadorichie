@@ -4,6 +4,7 @@ class Animal{
   float cx, cy;
   float xspeed, yspeed;
   float hunger;
+  Tank tank;
   boolean alive;
    float ratio; // the ratio of a turtle/fish's width/height, stored so that if it
   // eats another fish it retains its shape, but enlarges.
@@ -17,9 +18,10 @@ class Animal{
   cy = pos.y + ah/2;
   xspeed = random(0,1.5) *  int(pow(-1, int(random(0,2))));
   yspeed =  random(0,1) *  int(pow(-1, int(random(0,2))));
+  
   t.addAnimal(this);
   }
-  Animal(int x, int y, int aww, int ahh){
+  Animal(int x, int y, float xsp, float ysp, int aww, int ahh, Tank T){
     alive = true;
     hunger = 10;
      pos= new PVector(x,y);
@@ -27,9 +29,10 @@ class Animal{
   ah = ahh;
   cx = pos.x + aw/2;
   cy = pos.y + ah/2;
-  xspeed = random(0,1.5) *  int(pow(-1, int(random(0,2))));
-  yspeed =  random(0,1) *  int(pow(-1, int(random(0,2))));
+  xspeed = xsp;
+  yspeed =ysp;
   t.addAnimal(this);
+  tank = T;
   }
   void display(){
     fill(250,200,50);

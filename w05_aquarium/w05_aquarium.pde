@@ -9,6 +9,7 @@ float tankV;
 ArrayList<Animal> animals;
 Goldfish demo,demo2;
 Turtle turt1;
+Crab c0;
 
 void setup() {
   animals = new ArrayList<Animal>();
@@ -51,5 +52,17 @@ void draw() {
 }
 
 void mouseClicked() {
-  t.addAnimal(mouseX, mouseY);
+}
+void keyPressed(){
+  if(key == '1'){
+    t.addRyanFish(mouseX,mouseY);
+  }
+  if(key == '2'){
+    t.addCrab(mouseX,mouseY);}
+  if(key == '3'){
+    t.addGoldFish(mouseX,mouseY); 
+  }
+  if(key == '4'){
+    t.addTurtle(mouseX,mouseY); 
+  }
 }
