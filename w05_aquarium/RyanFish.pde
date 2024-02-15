@@ -4,6 +4,7 @@ class RyanFish extends Animal{
   }
   void display(){
     super.display();
+    if(!perished){
     float xScaleFactor; //multiplies x and y offsets so the fish can still fit in the width and height
     float yScaleFactor;
     xScaleFactor = aw/75;
@@ -43,7 +44,7 @@ class RyanFish extends Animal{
       vertex(pos.x+45*xScaleFactor,pos.y+5*yScaleFactor);
       vertex(pos.x+50*xScaleFactor,pos.y+17*yScaleFactor);
       endShape(CLOSE);
-    }
+    }}
   }
   void move(){
     pos.x += xspeed; //moves in a sine wave

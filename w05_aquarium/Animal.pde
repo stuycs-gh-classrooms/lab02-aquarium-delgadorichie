@@ -41,7 +41,7 @@ class Animal {
   void display() {
     stroke(#000000);
     if (!STOP) {
-        hunger-= .01;
+        hunger-= .1;
       }
     if (perished) {
       fill(80,80,80);

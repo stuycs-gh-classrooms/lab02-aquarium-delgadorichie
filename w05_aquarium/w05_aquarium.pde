@@ -38,7 +38,7 @@ void draw() {
   triangle(0,0,0,tankY, tankY * sqrt(3),0);
   stroke(#000000);
   t.moveAnimals();
-  t.allEat();
+ // t.allEat();
   //if(animals.size()>10){
  // println(animals.get(10).hunger);}
  // println(mouseX + " " + mouse

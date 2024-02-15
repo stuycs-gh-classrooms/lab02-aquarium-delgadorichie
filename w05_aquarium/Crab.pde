@@ -52,6 +52,7 @@ class Crab extends Animal{ //My Animal
   popMatrix();}
   }
   void swim(){
+    if(!perished){
     pos.x += xspeed; //moves like an animal but with a bit of randomness (okay, maybe more than a bit)
     pos.y += yspeed;
     if(pos.x + aw > tank.tx + tank.tw){
@@ -74,5 +75,5 @@ class Crab extends Animal{ //My Animal
     float randomVarianceY = random(-.3,.3);
     xspeed += randomVarianceX;
     yspeed += randomVarianceY;
-  }
+  }}
 }

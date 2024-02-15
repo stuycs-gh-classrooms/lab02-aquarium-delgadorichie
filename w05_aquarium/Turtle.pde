@@ -9,6 +9,7 @@ class Turtle extends Animal {
   }
   void display() {
     super.display();
+    if(!perished){
     fill(0, 48, 32);
     arc(pos.x + aw/3, pos.y + ah/2, aw/1.5, ah, PI, 2*PI, CHORD);
     fill(0, 200, 0);
@@ -19,7 +20,7 @@ class Turtle extends Animal {
     }
     if (xspeed<0) {
       circle(pos.x - aw/6, pos.y + ah/2, aw/3);
-    }
+    }}
   }
   boolean collisionCheck(Animal other) {
     return (dist(pos.x + 5 * aw/6, pos.y + ah/2, other.cx, other.cy)<other.aw/4);
