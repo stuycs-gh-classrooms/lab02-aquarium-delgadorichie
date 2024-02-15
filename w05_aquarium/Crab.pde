@@ -4,6 +4,10 @@ class Crab extends Animal{ //My Animal
   }
   void display(){
     super.display();
+    
+  cx = pos.x + aw/2;
+    cy = pos.y + ah/2;
+    if(!perished){
   float xScaleFactor =ah/170;
   float yScaleFactor =aw/140;
   fill(255,0,0);
@@ -45,7 +49,7 @@ class Crab extends Animal{ //My Animal
   vertex(60*xScaleFactor,140*yScaleFactor);
   vertex(35*xScaleFactor,120*yScaleFactor);
   endShape(CLOSE);
-  popMatrix();
+  popMatrix();}
   }
   void swim(){
     pos.x += xspeed; //moves like an animal but with a bit of randomness (okay, maybe more than a bit)

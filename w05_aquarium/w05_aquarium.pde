@@ -5,6 +5,7 @@ int floorH = 100;
 int tankW;
 int tankH;
 int tankL;
+int x;
 float tankV;
 ArrayList<Animal> animals;
 Goldfish demo,demo2;
@@ -22,13 +23,13 @@ void setup() {
   tankV = tankW* tankH * tankL;
   t = new Tank(tankX, tankY, tankW, tankH, floorH);
   t.display();
-  demo = new Goldfish(100,200);
-  demo2 = new Goldfish(500,200);
   turt1 = new Turtle(220,530);
 }//setup
 
 
 void draw() {
+  x = animals.size();
+  println(x);
   background(150);
   t.moveAnimals();
   t.display();
@@ -40,8 +41,7 @@ void draw() {
   t.allEat();
   //if(animals.size()>10){
  // println(animals.get(10).hunger);}
- // println(mouseX + " " + mouseY);
-  
+ // println(mouseX + " " + mouse
 }
 
 void mouseClicked() {

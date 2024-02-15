@@ -4,12 +4,10 @@ class Goldfish extends Animal {
  
   Goldfish(int x, int y) {
     super(x, y);
-    fsize = aw * ah * PI;
     ratio = ah/aw;
   }
   void display() {
     super.display();
-    if (alive) {
       fill(250, 200, 50);
       ellipse(cx, cy, aw, ah);
       if (xspeed<0) {
@@ -24,6 +22,6 @@ class Goldfish extends Animal {
       }
       
     }
-    }
+    
   
 }

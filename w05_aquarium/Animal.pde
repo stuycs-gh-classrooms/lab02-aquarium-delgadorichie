@@ -15,8 +15,8 @@ class Animal {
     alive = true;
     hunger = 10;
     pos= new PVector(x, y);
-    aw = random(15, 100);
-    ah = random(10, 100);
+    aw = random(15, 50);
+    ah = random(10, 50);
     cx = pos.x + aw/2;
     cy = pos.y + ah/2;
     xspeed = random(0, 1.5) *  int(pow(-1, int(random(0, 2))));
@@ -41,7 +41,7 @@ class Animal {
   void display() {
     stroke(#000000);
     if (!STOP) {
-        hunger-= .001;
+        hunger-= .01;
       }
     if (perished) {
       fill(80,80,80);
@@ -77,6 +77,7 @@ class Animal {
   }
   void die() {
     alive = !alive;
+    animals.remove(this);
   }
   void perish() {
     if(alive){
@@ -84,13 +85,15 @@ class Animal {
     perished = true;}
   }
   void eat(Animal other) {
-    if (size > other.size && collisionCheck(other) && (other.alive|| other.perished) && other.hunger < 9) {
+    if ((size > other.size)&& !(size == other.size) && collisionCheck(other) && (other.alive) && other.hunger < 9.9) {
       other.die();
+      float old = size;
       size += other.size;
       hunger += log(other.size);
-      aw = sqrt(size/ratio/PI);
-      ah = sqrt(size/ratio/PI)*ratio;
+      aw = sqrt(size/ratio);
+      ah = sqrt(size/ratio)*ratio;
       animals.remove(other);
+      println("animal grew by " + (size - old));
     }
   }
   boolean collisionCheck(Animal other) {

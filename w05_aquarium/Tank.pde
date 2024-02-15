@@ -14,6 +14,8 @@ class Tank{
     rect(tx, ty + th - fh, tw,th);
     for(int i =0; i< animals.size(); i++){
      animals.get(i).display();
+     textSize(100);
+     text(animals.get(i).hunger,animals.get(i).cx, animals.get(i).cy);
     }
   }
   void moveAnimals(){
@@ -53,10 +55,12 @@ class Tank{
     animals.add(a);
   }
   void allEat(){
-    for(int i =0; i< animals.size(); i++){
+    for(int i =0; i<animals.size(); i++){
       for(int j =0; j< animals.size(); j++){
      animals.get(i).eat(animals.get(j));
+       
+     }
     }
     }
-  }
+  
 }
