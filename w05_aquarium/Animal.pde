@@ -22,7 +22,6 @@ class Animal {
     xspeed = random(0, 1.5) *  int(pow(-1, int(random(0, 2))));
     yspeed =  random(0, 1) *  int(pow(-1, int(random(0, 2))));
     size =  aw * ah;
-    t.addAnimal(this);
   }
   Animal(int x, int y, float xsp, float ysp, int aww, int ahh, Tank T) {
     alive = true;
@@ -34,29 +33,22 @@ class Animal {
     cy = pos.y + ah/2;
     xspeed = xsp;
     yspeed =ysp;
-    t.addAnimal(this);
     tank = T;
     size = aw * ah;
   }
   void display() {
+    
     stroke(#000000);
+    textSize(20);
+    text(hunger,cx,cy-10);
+    
     if (!STOP) {
-        hunger-= .1;
-      }
-    if (perished) {
-      fill(80,80,80);
-      yspeed = 1;
-      xspeed = 0;
-      ellipse(cx, cy, aw, ah);
-
-      if (pos.y >= height - t.fh + random(10, 50)) {
-        yspeed = 0;
-      }
-      
+      hunger-= .01;
     }
+
     if (hunger<0) {
-        perish();
-      }
+      perish();
+    }
   }
   void swim() {
     cx = pos.x + aw/2;
@@ -75,27 +67,17 @@ class Animal {
     pos.x += xspeed;
     pos.y += yspeed;
   }
-  void die() {
-    alive = !alive;
-    animals.remove(this);
-  }
   void perish() {
-    if(alive){
-    alive = !alive;
-    perished = true;}
-  }
-  void eat(Animal other) {
-    if ((size > other.size)&& !(size == other.size) && collisionCheck(other) && (other.alive) && other.hunger < 9.9) {
-      other.die();
-      float old = size;
-      size += other.size;
-      hunger += log(other.size);
-      aw = sqrt(size/ratio);
-      ah = sqrt(size/ratio)*ratio;
-      animals.remove(other);
-      println("animal grew by " + (size - old));
+    if (alive) {
+      Carcass a = new Carcass(pos.x, pos.y, aw, ah);
+      carci.add(a);
+      alive = !alive;
+      perished = true;
+      animals.remove(this);      
     }
   }
+
+
   boolean collisionCheck(Animal other) {
     if (other == this) {
       return false;
