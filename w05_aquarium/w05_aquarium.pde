@@ -30,19 +30,16 @@ void draw() {
   t.cDisplay();
   t.animalsEat();
   t.tcEat();
-  if(sandimals.size()>0){
-  println(sandimals.get(sandimals.size()-1).pos.x + "," +  sandimals.get(sandimals.size()-1).pos.y);
-  }
 }
 
 void keyPressed() {
   if (key == '1') {
     t.addRyanFish(mouseX, mouseY);
   }
-  if (key == '2') {
+  if (key == '3') {
     t.addCrab(mouseX, mouseY);
   }
-  if (key == '3') {
+  if (key == '2') {
     t.addGoldFish(mouseX, mouseY);
   }
   if (key == '4') {
