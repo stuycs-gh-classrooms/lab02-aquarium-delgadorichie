@@ -39,8 +39,6 @@ class Animal {
   void display() {
     
     stroke(#000000);
-    textSize(20);
-    text(hunger,cx,cy-10);
     
     if (!STOP) {
       hunger-= .01;
